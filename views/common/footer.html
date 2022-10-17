@@ -1,0 +1,39 @@
+<div class="footer-container">
+    <div class="footer">
+        <p class="beian-line">Copyright &copy; 2022. <a href="https://beian.miit.gov.cn">备案号：渝ICP备2022002661号-1</a></p>
+    </div>
+</div>
+
+<div id="float_menu" class="float-menu-container">
+    <div class="menu">
+        <div id="float_to_top" class="menu-item">
+            <div class="item-icon"><i class="iconfont iconarrow-up"></i></div>
+            <div class="tip-content">回到顶部</div>     
+        </div>
+        <div class="menu-item">
+            <div class="item-icon"><i class="iconfont iconweixingongzhonghao"></i></div>
+            <div class="tip-content qrcode">
+                <img src="assets/images/wechart.jpg" alt="">
+            </div>     
+        </div>
+    </div>
+</div>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/swiper-bundle.js"></script>
+<script>
+    $(function(){
+        // 监听滚动条事件
+        window.onscroll = function () {
+            var scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > 0) {
+                $("div#float_menu").show();
+            }else{
+                $("div#float_menu").hide();
+            }
+        }
+
+        $("div#float_to_top").click(function(){
+            $("html,body").animate({ scrollTop: 0 }, 500);
+        })
+    })
+</script>

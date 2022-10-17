@@ -1,0 +1,126 @@
+<%- include ("common/header.html") %>
+
+<div class="main">
+    <div class="main-row row">
+        <div id="big_swiper" class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#" class="banner-item">
+                        <img src="assets/images/banner/banner_1.jpeg" />
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="banner-item">
+                        <img src="assets/images/banner/banner_2.jpeg" />
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="banner-item">
+                        <img src="assets/images/banner/banner_3.jpeg" />
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="banner-item">
+                        <img src="assets/images/banner/banner_4.jpeg" />
+                    </a>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="hotspot">
+            <div class="hotspot-title">
+                <i class="iconfont iconredian"></i>
+                <label>热点速看</label>
+            </div>
+            <div class="hotspot-list">
+                <div class="hotspot-item">士大夫速度发给数控打发士大夫敢死队方式的方式法国大使馆</div>
+                <div class="hotspot-item">士大夫速度发给数控打发士大夫敢死队方式的方式法国大使馆</div>
+                <div class="hotspot-item">士大夫速度发给数控打发士大夫敢死队方式dsdfgsdf公司的三个地方的方式法国大使馆</div>
+                <div class="hotspot-item">士大夫速度发给数控打发士大夫敢死队方式的方式法国大使馆</div>
+                <div class="hotspot-item">士大夫速度发给数控打发士大夫敢死队方式的方式法国大使馆</div>
+                <div class="hotspot-item">士大夫速度发给数控打发士大夫敢死队方式的方式法国大使馆</div>
+                <div class="hotspot-item">士大夫速度发给数控打发士大夫敢死队方式的方式法国大使馆</div>
+                <div class="hotspot-item">士大夫速度发给数控打发士大夫敢死队方式的方式法国大使馆</div>
+            </div>
+        </div>
+        <div class="poster">
+            <img src="assets/images/poster.jpeg" width="100%" height="100%" alt="广告图">
+        </div>
+    </div>
+    <div class="main-row row">
+        <div class="main-content">
+            <div class="nav-container">
+                <div class="nav-item active">
+                    <div class="nav-text">全部</div>
+                    <div class="nav-underline"></div>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-text">html5</div>
+                    <div class="nav-underline"></div>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-text">javascript</div>
+                    <div class="nav-underline"></div>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-text">vue</div>
+                    <div class="nav-underline"></div>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-text">java</div>
+                    <div class="nav-underline"></div>
+                </div>
+            </div>
+            <div class="list-container">
+                <div class="item">
+                    <div class="item-title">这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题</div>
+                    <div class="item-content">
+                        <div class="item-cover">
+                            <img src="assets/images/banner/banner_2.jpeg" alt="封面">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-describe">是的客服说颠覆历史随供水量感受到了贵司苏菲规划四u的给水管还是对和速度跟上丢了十六岁的干活了速递风格和</div>
+                            <div class="item-detail">
+                                <div class="row">
+                                    <div class="header-img"><img src="assets/images/header.jpg" alt="头像"></div>
+                                    <div class="user-name">动漫的帅马</div>
+                                </div>
+                                <div class="row">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-slide">
+
+        </div>
+    </div>
+</div>
+
+<%- include ("common/footer.html") %>
+<script>
+    $(function(){
+        initBanner();
+
+        $("div.nav-container .nav-item").click(function(){
+            $(this).addClass("active").siblings().removeClass("active");
+        });
+
+        function initBanner(){
+            // 左侧main-swiper
+            var mainSwiper = new Swiper("#big_swiper", {
+                pagination: {
+                    el: ".swiper-pagination",
+                }, // 分页
+                loop: true, // 无限循环
+                mousewheelControl: true, // 开启鼠标滚动切换
+            });
+        }
+
+    })
+</script>
+</body>
+</html>
