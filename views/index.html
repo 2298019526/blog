@@ -72,26 +72,28 @@
                 </div>
             </div>
             <div class="list-container">
-                <div class="item">
-                    <div class="item-title">这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题</div>
-                    <div class="item-content">
-                        <div class="item-cover">
-                            <img src="assets/images/banner/banner_2.jpeg" alt="封面">
-                        </div>
-                        <div class="item-info">
-                            <div class="item-describe">是的客服说颠覆历史随供水量感受到了贵司苏菲规划四u的给水管还是对和速度跟上丢了十六岁的干活了速递风格和</div>
-                            <div class="item-detail">
-                                <div class="row">
-                                    <div class="header-img"><img src="assets/images/header.jpg" alt="头像"></div>
-                                    <div class="user-name">动漫的帅马</div>
-                                </div>
-                                <div class="row">
-                                    
+                <% articleList.forEach((item) => { %>
+                    <div class="item">
+                        <div class="item-title"><%= item.blog_title %></div>
+                        <div class="item-content">
+                            <div class="item-cover">
+                                <img src="assets/images/banner/banner_2.jpeg" alt="封面">
+                            </div>
+                            <div class="item-info">
+                                <div class="item-describe"><%= item.blog_content %></div>
+                                <div class="item-detail">
+                                    <div class="row">
+                                        <div class="header-img"><img src="assets/images/header.jpg" alt="头像"></div>
+                                        <div class="user-name">动漫的帅马</div>
+                                    </div>
+                                    <div class="row">
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                <% }); %>
             </div>
         </div>
         <div class="main-slide">
@@ -104,10 +106,32 @@
 <script>
     $(function(){
         initBanner();
+        ajaxTest();
 
         $("div.nav-container .nav-item").click(function(){
             $(this).addClass("active").siblings().removeClass("active");
+            var id = $(this).data("tag_id");
+            getArticleList();
         });
+
+        function getArticleList(tagId){
+            $.ajax({
+                url: "/api/article/getIndexArticleList",
+                type: "get",
+                data: {
+                    page: 1,
+                    pageSize: 20,
+                    tagId: tagId
+                },
+                dataType: "json",
+                success: function(e){
+                    console.log(e)
+                },
+                error: function(err){
+                    console.error(err)
+                }
+            })
+        }
 
         function initBanner(){
             // 左侧main-swiper

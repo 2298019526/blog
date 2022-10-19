@@ -123,6 +123,7 @@
     white-space: nowrap;
     line-height: 30px;
     height: 30px;
+    margin-bottom: 5px;
 }
 .main .main-row .main-content .list-container .item .item-content{
     width: 100%;

@@ -7,6 +7,10 @@ app.engine('.html', require('ejs').__express);
 app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", "html")
 
+// 设置api路由
+const apiRouter = require('./controllers/index')
+app.use("/api", apiRouter)
+
 // 设置页面路由
 const indexRouter = require('./routes/index')
 app.use("/", indexRouter)
